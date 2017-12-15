@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.plivo.util.TestListener"/>
+  </listeners>
+  <test name="Test(failed)">
+    <parameter name="filePath" value="src/test/java/com/plivo/sendMessage/TestData"/>
+    <classes>
+      <class name="com.plivo.sendMessage.SendMessageTest">
+        <methods>
+          <include name="verifySMSDelivery" invocation-numbers="0"/>
+          <include name="setupSendMessageTest"/>
+        </methods>
+      </class> <!-- com.plivo.sendMessage.SendMessageTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
