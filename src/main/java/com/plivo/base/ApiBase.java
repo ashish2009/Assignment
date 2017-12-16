@@ -10,10 +10,23 @@ public class ApiBase {
 	
 	public RequestSpecification spec;
 	
+	/*
+	 * This method is used for creating common request
+	 * sepecification with auth for all request.
+	 * Auth is specified in config.properties file
+	 */
+	
 	public ApiBase setAuth(String authId,String token){
 	    spec = given().auth().basic(authId, token);
 	    return this;
 	}
+	
+	/*
+	 * This method is used to set header and common for
+	 * all request.There may be more then one header for request
+	 * so headers set all headers,it should be specified in 
+	 * config file with format like ex: header:value;header:value
+	 */
 	
 	public ApiBase setHeader(String h){
 		 HashMap<String, String> head = new HashMap<String, String>();
@@ -26,11 +39,22 @@ public class ApiBase {
 		 return this;
 	}
 	
+	/*
+	 * This method will set base URI and base Path
+	 * to spec which will be common for all request
+	 * base URI and base path are specified in config.properties.
+	 */
+	
 	public ApiBase setURI(String URI,String path){
 		spec.baseUri(URI);
 		spec.basePath(path);
 		return this;
 	}
+	
+	/*
+	 * Finally will use specification with auth,header,base URI and
+	 * base path to send Post or Get request
+	 */
 	
 	public RequestSpecification getSpec(){
 		return spec;
