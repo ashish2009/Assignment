@@ -24,6 +24,17 @@ import org.testng.annotations.Test;
 
 
 public class FileDataProvider {
+	
+	/*
+	 * This method will use filePath variable set in testng.xml file
+	 * and create Iterator to repeat test for each line in test data.
+	 * There can be multiple ways of taking file path(Ex: it can be set
+	 *  in before class or with test method by passing parameter to 
+	 *  data provider.To pass parameter to data provider we need to
+	 *  create custom annotation because this not given by testng.This
+	 *  I have done but for now using basic implementation to avoid
+	 *  complexity)
+	 */
 		
 	@DataProvider
 	public static Iterator<Object[]> fileDataProvider(ITestContext context) {
