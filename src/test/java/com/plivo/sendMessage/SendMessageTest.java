@@ -1,6 +1,6 @@
 package com.plivo.sendMessage;
 
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -31,7 +31,7 @@ public class SendMessageTest {
 	List<String> UUID;
 	String messageUUID;
 
-	@BeforeTest
+	@BeforeClass
 	public void setupSendMessageTest() {
 		apiSpec = new ApiBase()
 				.setAuth(prop.get("authId"), prop.get("authToken"))
