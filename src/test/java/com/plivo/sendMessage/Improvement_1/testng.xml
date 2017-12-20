@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+	<listeners>
+		<listener class-name="com.plivo.util.TestListener"></listener>
+	</listeners>
+
+	<test thread-count="1" name="Test">
+	<parameter name="filePath" value="src/test/java/com/plivo/sendMessage/Improvement_1/TestData"></parameter>
+		<classes>
+			<class name="com.plivo.sendMessage.Improvement_1.SendMessageTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
